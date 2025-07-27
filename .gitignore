@@ -1,0 +1,6 @@
+# Archivos que no se deben subir al repositorio
+.vs/
+bin/
+obj/
+*.user
+*.suo

@@ -1,0 +1,16 @@
+﻿@model PaginaCongreso.Models.Ticket
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml"; //Para todo el Login tiene su propio Layout, es la página que comparte ciertos elementos para todas las vistas de Login
+}
+<div class="container bg-white p-5 rounded-4">
+    <h2>Autenticación</h2>
+    <form asp-action="Autenticacion" method="post">
+        <div class="form-group">
+            <label asp-for="nom_Ticket">Ingrese Ticket</label>
+            <input asp-for="nom_Ticket" class="form-control" />
+        </div>
+        <button type="button" class="btn btn-primary mt-4" onclick="location.href='@Url.Action("Registro", "Login")'">
+            Autenticar
+        </button>
+    </form>
+</div>

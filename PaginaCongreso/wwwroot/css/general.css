@@ -1,0 +1,82 @@
+﻿body {
+    overflow-x: hidden;
+}
+
+.bannerCongreso {
+    height: 75vh;
+}
+
+.imagenFondo {
+    background-image: url('/Imagenes/Fondo_Congreso_1.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.imagenDivision {
+    background-image: url('/Imagenes/Imagen_Division.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bannerDivision {
+    height: 30vh;
+}
+
+.lineaTitulo {
+    width: 120px; /* Aproximadamente el ancho de 5 letras */
+    height: 4px;
+    background-color: white; /* O el color que prefieras */
+    margin-top: 8px;
+}
+.elementoNav {
+    color: white !important;
+}
+.ladoIzquierdo {
+    background-color: #3D405B;
+}
+.ladoDerecho {
+    background-color: #AA1A2D;
+    overflow-x: hidden;
+}
+.fondoIcono {
+    background-color: #F4F1DE;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
+
+.imagenConfe{
+    width:530px;
+}
+.fondoConferencista {
+    padding:30px;
+    background-color: rgb(170, 26, 45);
+    border-radius: 50%;
+    cursor:pointer;
+}
+.subtituloConferencista{
+    margin-bottom: -15px;
+}
+.cartaSistemas {
+    background-color: #3D405B;
+}
+.cartaIndustrial {
+    background-color: #417B5A;
+}
+.cartaEconomicas {
+    background-color: #E2711D;
+}
+.botonInicio {
+    color: black !important;
+    background-color: white;
+    padding: 4px 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+    .botonInicio:hover {
+        background-color: #3D405B;
+        color:white !important;
+    }
+

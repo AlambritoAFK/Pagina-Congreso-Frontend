@@ -1,0 +1,790 @@
+﻿@model HomeIndexViewModel
+@{
+    Layout = "~/Views/Shared/_LayoutInformativo.cshtml"; //Para la página informativa existe su propio Layout, es la página que alberga el index.cshtml
+}
+<!--Esto es todo el div para la imagen del inicio-->
+<div class="row position-relative bannerCongreso text-white d-flex align-items-center justify-content-center">
+
+    <!-- El Navbar transparente -->
+    <nav class="navbar navbar-expand-lg navbar-dark position-absolute top-0 start-0 w-100 z-2 px-4 px-md-5">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="~/Imagenes/EmprendeTecLogo.png" alt="Emprendetec" width="195" height="32">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active elementoNav" aria-current="page" href="#">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link elementoNav" href="#">SOBRE EL CONGRESO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link elementoNav" href="#">HORARIOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link elementoNav" href="#">CONFERENCISTAS</a>
+                    </li>              
+                </ul>
+                <a asp-controller="Login" asp-action="Login" class="btn botonInicio">
+                    Ingresar
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- La imagen de fondo como tal-->
+    <div class="position-absolute top-0 start-0 w-100 h-100 imagenFondo"></div>
+
+    <!-- El color rojo de fondo y la opacidad-->
+    <div class="position-absolute top-0 start-0 w-100 h-100 opacity-75" style="background-color:rgb(170, 26, 45)"></div>
+
+    <!-- Texto central -->
+    <div class="container-fluid p-4 text-center z-1 d-flex flex-column align-items-center justify-content-center h-100">
+        <div class="row text-center fs-4 mb-3">
+            Un espacio para aprender
+        </div>
+        <div class="row text-center fs-1 fw-bold">
+            CONGRESO EMPRENDETEC
+        </div>
+        <div class="row text-center mb-3 lineaTitulo">
+        </div>
+        <div class="row text-center fs-4 fw-light">
+            Para mentes creativas, técnicas y visionarias.
+        </div>
+        <div class="row text-center fs-4 fw-light">
+            Una experiencia que conecta tecnología, innovación y emprendimiento.
+        </div>
+    </div>
+</div>
+
+<!--Fecha y Lugar-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 ladoIzquierdo p-4">
+            <div class="row justify-content-md-end justify-content-center text-center align-items-center">
+                <div class="col-md-6 text-black fondoIcono my-2 justify-content-center align-content-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-calendar-event-fill" viewBox="0 0 16 16">
+                        <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2m-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5" />
+                    </svg>
+                </div>
+                <div class="col-md-6 text-white text-center">
+                    <div class="row">
+                        <h3 class="text-center fs-3">
+                            Cuando
+                        </h3>
+                    </div>
+                    <div class="row fs-2 fw-bold">
+                        <h2>
+                            2-4 OCTUBRE 2025
+                        </h2>
+                    </div>
+                    <div class="row">
+                        <h4 class="text-center  fs-4 fw-lighter">
+                            Primer día virtual, 3 y 4 presencial.
+                        </h4>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 ladoDerecho p-4">
+            <div class="row justify-content-md-start justify-content-center text-center align-items-center">
+                <div class="col-md-6 text-white text-center">
+                    <div class="row">
+                        <h3 class="text-center fs-3">
+                            Donde
+                        </h3>
+                    </div>
+                    <div class="row fs-2 fw-bold">
+                        <h2>
+                            Centro de Convenciones Gran Karmel
+                        </h2>
+                    </div>
+                    <div class="row">
+                        <h4 class="text-center  fs-4 fw-lighter">
+                            En el salón imperial.
+                        </h4>
+
+                    </div>
+                </div>
+                <div class="col-md-6 text-black fondoIcono my-2 justify-content-center align-content-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Sobre el Congreso-->
+<div class="container p-5">
+    <div class="row">
+        <div class="col-lg-6 text-center">
+            <img class="imagenConfe img-fluid" src="/Imagenes/ImagenSenior.JPG" />
+        </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <h2 class="fs-1">
+                    Sobre el congreso
+                </h2>
+            </div>
+            <div class="row">
+                <p class="fs-5">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae molestie justo. Praesent accumsan, purus sit amet tempus ornare, mi metus vehicula urna, vitae rhoncus sem dolor sit amet lacus. Pellentesque risus lacus, posuere nec ligula ut, faucibus viverra erat. Suspendisse non odio ipsum. Etiam a suscipit tellus. Pellentesque accumsan mauris quis lacinia dignissim.
+                </p>
+                <p class="fs-5">
+                    Vestibulum eget malesuada tellus, a pellentesque nisl. Morbi neque ex, venenatis et risus in, mollis rhoncus ex. Praesent iaculis nisl ac dignissim efficitur. Sed vehicula et nisl vel egestas. Praesent ac arcu eu purus egestas tempor. Aliquam est metus, bibendum ultrices urna ac, consequat tristique eros.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Division para cambiar de seccion-->
+
+<div class="row position-relative bannerDivision text-white d-flex align-items-center justify-content-center">
+
+    <!-- La imagen de fondo como tal-->
+    <div class="position-absolute top-0 start-0 w-100 h-100 imagenDivision"></div>
+
+    <!-- El color rojo de fondo y la opacidad-->
+    <div class="position-absolute top-0 start-0 w-100 h-100 opacity-75" style="background-color:rgb(170, 26, 45)"></div>
+
+    <!-- Texto central -->
+    <div class="container-fluid p-4 text-center z-1 d-flex flex-column align-items-center justify-content-center h-100">
+        <div class="row text-center fs-1 fw-bold">
+            CONOCE NUESTRAS CONFERENCIAS
+        </div>
+        <div class="row text-center mb-3 lineaTitulo">
+        </div>
+        <div class="row text-center fs-4 fw-light">
+            Espacios de aprendizaje orientados al aprendizaje
+        </div>
+    </div>
+</div>
+
+<!--Fechas de las conferencias-->
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="row mb-3">
+            <h2>
+                Ingeniería en Sistemas, Electrónica y Telecomunicaciones
+            </h2>
+        </div>
+        <!--Inicia las cartas de las conferencias-->
+       
+        <div class="row mb-5">
+            <div>
+                <div class="d-flex flex-row overflow-auto">
+                    @foreach (var conferencia in Model.ConferenciasSis)
+                    {
+                    <div class="card me-3 cartaSistemas text-white" style="max-width:400px; min-width:400px">
+                        <div class="card-header fs-6">
+                                @conferencia.fecha_Conferencia.ToString("dddd, dd 'de' MMMM 'de' yyyy 'a las' HH:mm")
+                        </div>
+                            <div class="card-body">
+                                <h5 class="card-title fs-3 fw-bold">@conferencia.nombre_Conferencia</h5>
+                                <p class="card-text">
+                                    @conferencia.salon_Conferencia
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                @conferencia.Conferencista
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        
+        <!--Termina las cartas de la conferencias-->
+    </div>
+    <div class="row">
+        <div class="row mb-3">
+            <h2>
+                Ingeniería Industrial
+            </h2>
+        </div>
+        <div class="row mb-5">
+            <div>
+                <div class="d-flex flex-row overflow-auto">
+                    @foreach (var conferencia in Model.ConferenciasIndus)
+                    {
+                        <div class="card me-3 cartaIndustrial text-white" style="max-width:400px; min-width:400px">
+                            <div class="card-header fs-6">
+                                @conferencia.fecha_Conferencia.ToString("dddd, dd 'de' MMMM 'de' yyyy 'a las' HH:mm")
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title fs-3 fw-bold">@conferencia.nombre_Conferencia</h5>
+                                <p class="card-text">
+                                    @conferencia.salon_Conferencia
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                @conferencia.Conferencista
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row mb-3">
+            <h2>
+                Facultad de Económicas
+            </h2>
+        </div>
+        <div class="row mb-5">
+            <div>
+                <div class="d-flex flex-row overflow-auto">
+                    @foreach (var conferencia in Model.ConferenciasEcono)
+                    {
+                        <div class="card me-3 cartaEconomicas text-white" style="max-width:400px; min-width:400px">
+                            <div class="card-header fs-6">
+                                @conferencia.fecha_Conferencia.ToString("dddd, dd 'de' MMMM 'de' yyyy 'a las' HH:mm")
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title fs-3 fw-bold">@conferencia.nombre_Conferencia</h5>
+                                <p class="card-text">
+                                    @conferencia.salon_Conferencia
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                @conferencia.Conferencista
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Division para cambiar de seccion-->
+
+<div class="row position-relative bannerDivision text-white d-flex align-items-center justify-content-center">
+
+    <!-- La imagen de fondo como tal-->
+    <div class="position-absolute top-0 start-0 w-100 h-100 imagenDivision"></div>
+
+    <!-- El color rojo de fondo y la opacidad-->
+    <div class="position-absolute top-0 start-0 w-100 h-100 opacity-75" style="background-color:rgb(170, 26, 45)"></div>
+
+    <!-- Texto central -->
+    <div class="container-fluid p-4 text-center z-1 d-flex flex-column align-items-center justify-content-center h-100">
+        <div class="row text-center fs-1 fw-bold">
+            CONFERENCISTAS PRESENTES
+        </div>
+        <div class="row text-center mb-3 lineaTitulo">
+        </div>
+        <div class="row text-center fs-4 fw-light">
+            Cuyas voces inspiran
+        </div>
+    </div>
+</div>
+
+<!-- Apartado de los conferencistas, se le puede dar click a su imagen y se abre un modal con toda la información del conferencista -->
+    <!-- Fotografía de los conferencista, con párrafos donde irán sus nombres y profesión -->
+
+<div class="container mt-5">
+    <div class="row text-center my-2">
+        <div class="col-md-4 justify-content-center">
+            <svg data-bs-toggle="modal" data-bs-target="#infoConferencista1" xmlns="http://www.w3.org/2000/svg" width="210" height="210" fill="currentColor" class="bi bi-person-fill text-white fondoConferencista" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg>
+            <div class="row subtituloConferencista mt-2">
+                <div class="col-12">
+                    <p>
+                        Nombre Conferencista
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Profesión Conferencista
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 justify-content-center">
+            <svg data-bs-toggle="modal" data-bs-target="#infoConferencista2" xmlns="http://www.w3.org/2000/svg" width="210" height="210" fill="currentColor" class="bi bi-person-fill text-white fondoConferencista" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg>
+            <div class="row subtituloConferencista mt-2">
+                <div class="col-12">
+                    <p>
+                        Nombre Conferencista
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Profesión Conferencista
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 justify-content-center">
+            <svg data-bs-toggle="modal" data-bs-target="#infoConferencista3" xmlns="http://www.w3.org/2000/svg" width="210" height="210" fill="currentColor" class="bi bi-person-fill text-white fondoConferencista" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg>
+            <div class="row subtituloConferencista mt-2">
+                <div class="col-12">
+                    <p>
+                        Nombre Conferencista
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Profesión Conferencista
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center my-2">
+        <div class="col-md-4 justify-content-center">
+            <svg data-bs-toggle="modal" data-bs-target="#infoConferencista4" xmlns="http://www.w3.org/2000/svg" width="210" height="210" fill="currentColor" class="bi bi-person-fill text-white fondoConferencista" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg>
+            <div class="row subtituloConferencista mt-2">
+                <div class="col-12">
+                    <p>
+                        Nombre Conferencista
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Profesión Conferencista
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 justify-content-center">
+            <svg data-bs-toggle="modal" data-bs-target="#infoConferencista5" xmlns="http://www.w3.org/2000/svg" width="210" height="210" fill="currentColor" class="bi bi-person-fill text-white fondoConferencista" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg>
+            <div class="row subtituloConferencista mt-2">
+                <div class="col-12">
+                    <p>
+                        Nombre Conferencista
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Profesión Conferencista
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 justify-content-center">
+            <svg data-bs-toggle="modal" data-bs-target="#infoConferencista6" xmlns="http://www.w3.org/2000/svg" width="210" height="210" fill="currentColor" class="bi bi-person-fill text-white fondoConferencista" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg>
+            <div class="row subtituloConferencista mt-2">
+                <div class="col-12">
+                    <p>
+                        Nombre Conferencista
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Profesión Conferencista
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center my-2">
+        <div class="col-md-4 justify-content-center">
+            <svg data-bs-toggle="modal" data-bs-target="#infoConferencista7" xmlns="http://www.w3.org/2000/svg" width="210" height="210" fill="currentColor" class="bi bi-person-fill text-white fondoConferencista" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg>
+            <div class="row subtituloConferencista mt-2">
+                <div class="col-12">
+                    <p>
+                        Nombre Conferencista
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Profesión Conferencista
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 justify-content-center">
+            <svg data-bs-toggle="modal" data-bs-target="#infoConferencista8" xmlns="http://www.w3.org/2000/svg" width="210" height="210" fill="currentColor" class="bi bi-person-fill text-white fondoConferencista" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg>
+            <div class="row subtituloConferencista mt-2">
+                <div class="col-12">
+                    <p>
+                        Nombre Conferencista
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Profesión Conferencista
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 justify-content-center">
+            <svg data-bs-toggle="modal" data-bs-target="#infoConferencista9" xmlns="http://www.w3.org/2000/svg" width="210" height="210" fill="currentColor" class="bi bi-person-fill text-white fondoConferencista" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg>
+            <div class="row subtituloConferencista mt-2">
+                <div class="col-12">
+                    <p>
+                        Nombre Conferencista
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Profesión Conferencista
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal del conferencista -->
+    <div class="modal fade" id="infoConferencista1" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="tituloModal">Nombre conferencista 1</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row text-center justify-content-center">
+                                <div class="col-12 text-white  my-2 justify-content-center align-content-center" data-bs-toggle="modal" data-bs-target="#infoConferencista">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="175" height="175" fill="currentColor" class="bi bi-person-fill fondoConferencista" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                    </svg>
+                                </div>
+                                <div class="row text-center">
+                                    <p class="text-center">
+                                        Profesión Conferencista
+                                    </p>
+                                </div>
+                                <div class="row text-start mb-3">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae consequat orci. Donec in turpis ac ex sagittis blandit. 
+                                    Sed aliquet tristique libero, non vehicula velit fermentum egestas. Aliquam placerat metus elementum lorem interdum egestas. 
+                                    Integer a facilisis dui, ut bibendum nunc. In tempus fringilla tristique. 
+                                    Quisque tristique auctor diam in volutpat. Vivamus eu mi id orci ornare cursus. Etiam eget est sagittis, venenatis quam sed, euismod tellus.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="infoConferencista2" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="tituloModal">Nombre conferencista 2</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row text-center justify-content-center">
+                            <div class="col-12 text-white  my-2 justify-content-center align-content-center" data-bs-toggle="modal" data-bs-target="#infoConferencista">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="175" height="175" fill="currentColor" class="bi bi-person-fill fondoConferencista" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                </svg>
+                            </div>
+                            <div class="row text-center">
+                                <p class="text-center">
+                                    Profesión Conferencista
+                                </p>
+                            </div>
+                            <div class="row text-start mb-3">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae consequat orci. Donec in turpis ac ex sagittis blandit.
+                                Sed aliquet tristique libero, non vehicula velit fermentum egestas. Aliquam placerat metus elementum lorem interdum egestas.
+                                Integer a facilisis dui, ut bibendum nunc. In tempus fringilla tristique.
+                                Quisque tristique auctor diam in volutpat. Vivamus eu mi id orci ornare cursus. Etiam eget est sagittis, venenatis quam sed, euismod tellus.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="infoConferencista3" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="tituloModal">Nombre conferencista 3</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row text-center justify-content-center">
+                            <div class="col-12 text-white  my-2 justify-content-center align-content-center" data-bs-toggle="modal" data-bs-target="#infoConferencista">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="175" height="175" fill="currentColor" class="bi bi-person-fill fondoConferencista" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                </svg>
+                            </div>
+                            <div class="row text-center">
+                                <p class="text-center">
+                                    Profesión Conferencista
+                                </p>
+                            </div>
+                            <div class="row text-start mb-3">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae consequat orci. Donec in turpis ac ex sagittis blandit.
+                                Sed aliquet tristique libero, non vehicula velit fermentum egestas. Aliquam placerat metus elementum lorem interdum egestas.
+                                Integer a facilisis dui, ut bibendum nunc. In tempus fringilla tristique.
+                                Quisque tristique auctor diam in volutpat. Vivamus eu mi id orci ornare cursus. Etiam eget est sagittis, venenatis quam sed, euismod tellus.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="infoConferencista4" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="tituloModal">Nombre conferencista 4</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row text-center justify-content-center">
+                            <div class="col-12 text-white  my-2 justify-content-center align-content-center" data-bs-toggle="modal" data-bs-target="#infoConferencista">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="175" height="175" fill="currentColor" class="bi bi-person-fill fondoConferencista" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                </svg>
+                            </div>
+                            <div class="row text-center">
+                                <p class="text-center">
+                                    Profesión Conferencista
+                                </p>
+                            </div>
+                            <div class="row text-start mb-3">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae consequat orci. Donec in turpis ac ex sagittis blandit.
+                                Sed aliquet tristique libero, non vehicula velit fermentum egestas. Aliquam placerat metus elementum lorem interdum egestas.
+                                Integer a facilisis dui, ut bibendum nunc. In tempus fringilla tristique.
+                                Quisque tristique auctor diam in volutpat. Vivamus eu mi id orci ornare cursus. Etiam eget est sagittis, venenatis quam sed, euismod tellus.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="infoConferencista5" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="tituloModal">Nombre conferencista 5</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row text-center justify-content-center">
+                                <div class="col-12 text-white  my-2 justify-content-center align-content-center" data-bs-toggle="modal" data-bs-target="#infoConferencista">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="175" height="175" fill="currentColor" class="bi bi-person-fill fondoConferencista" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                    </svg>
+                                </div>
+                                <div class="row text-center">
+                                    <p class="text-center">
+                                        Profesión Conferencista
+                                    </p>
+                                </div>
+                                <div class="row text-start mb-3">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae consequat orci. Donec in turpis ac ex sagittis blandit. 
+                                    Sed aliquet tristique libero, non vehicula velit fermentum egestas. Aliquam placerat metus elementum lorem interdum egestas. 
+                                    Integer a facilisis dui, ut bibendum nunc. In tempus fringilla tristique. 
+                                    Quisque tristique auctor diam in volutpat. Vivamus eu mi id orci ornare cursus. Etiam eget est sagittis, venenatis quam sed, euismod tellus.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="infoConferencista6" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="tituloModal">Nombre conferencista 6</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row text-center justify-content-center">
+                                <div class="col-12 text-white  my-2 justify-content-center align-content-center" data-bs-toggle="modal" data-bs-target="#infoConferencista">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="175" height="175" fill="currentColor" class="bi bi-person-fill fondoConferencista" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                    </svg>
+                                </div>
+                                <div class="row text-center">
+                                    <p class="text-center">
+                                        Profesión Conferencista
+                                    </p>
+                                </div>
+                                <div class="row text-start mb-3">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae consequat orci. Donec in turpis ac ex sagittis blandit. 
+                                    Sed aliquet tristique libero, non vehicula velit fermentum egestas. Aliquam placerat metus elementum lorem interdum egestas. 
+                                    Integer a facilisis dui, ut bibendum nunc. In tempus fringilla tristique. 
+                                    Quisque tristique auctor diam in volutpat. Vivamus eu mi id orci ornare cursus. Etiam eget est sagittis, venenatis quam sed, euismod tellus.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="infoConferencista7" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="tituloModal">Nombre conferencista 7</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row text-center justify-content-center">
+                                <div class="col-12 text-white  my-2 justify-content-center align-content-center" data-bs-toggle="modal" data-bs-target="#infoConferencista">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="175" height="175" fill="currentColor" class="bi bi-person-fill fondoConferencista" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                    </svg>
+                                </div>
+                                <div class="row text-center">
+                                    <p class="text-center">
+                                        Profesión Conferencista
+                                    </p>
+                                </div>
+                                <div class="row text-start mb-3">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae consequat orci. Donec in turpis ac ex sagittis blandit. 
+                                    Sed aliquet tristique libero, non vehicula velit fermentum egestas. Aliquam placerat metus elementum lorem interdum egestas. 
+                                    Integer a facilisis dui, ut bibendum nunc. In tempus fringilla tristique. 
+                                    Quisque tristique auctor diam in volutpat. Vivamus eu mi id orci ornare cursus. Etiam eget est sagittis, venenatis quam sed, euismod tellus.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="infoConferencista8" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="tituloModal">Nombre conferencista 8</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row text-center justify-content-center">
+                                <div class="col-12 text-white  my-2 justify-content-center align-content-center" data-bs-toggle="modal" data-bs-target="#infoConferencista">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="175" height="175" fill="currentColor" class="bi bi-person-fill fondoConferencista" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                    </svg>
+                                </div>
+                                <div class="row text-center">
+                                    <p class="text-center">
+                                        Profesión Conferencista
+                                    </p>
+                                </div>
+                                <div class="row text-start mb-3">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae consequat orci. Donec in turpis ac ex sagittis blandit. 
+                                    Sed aliquet tristique libero, non vehicula velit fermentum egestas. Aliquam placerat metus elementum lorem interdum egestas. 
+                                    Integer a facilisis dui, ut bibendum nunc. In tempus fringilla tristique. 
+                                    Quisque tristique auctor diam in volutpat. Vivamus eu mi id orci ornare cursus. Etiam eget est sagittis, venenatis quam sed, euismod tellus.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="infoConferencista9" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="tituloModal">Nombre conferencista 9</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row text-center justify-content-center">
+                            <div class="col-12 text-white  my-2 justify-content-center align-content-center" data-bs-toggle="modal" data-bs-target="#infoConferencista">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="175" height="175" fill="currentColor" class="bi bi-person-fill fondoConferencista" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                </svg>
+                            </div>
+                            <div class="row text-center">
+                                <p class="text-center">
+                                    Profesión Conferencista
+                                </p>
+                            </div>
+                            <div class="row text-start mb-3">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae consequat orci. Donec in turpis ac ex sagittis blandit.
+                                Sed aliquet tristique libero, non vehicula velit fermentum egestas. Aliquam placerat metus elementum lorem interdum egestas.
+                                Integer a facilisis dui, ut bibendum nunc. In tempus fringilla tristique.
+                                Quisque tristique auctor diam in volutpat. Vivamus eu mi id orci ornare cursus. Etiam eget est sagittis, venenatis quam sed, euismod tellus.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
